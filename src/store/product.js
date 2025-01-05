@@ -24,7 +24,7 @@ export const useProductStore = create((set) => ({
 
     try {
       // Llamada a la API
-      const res = await fetch("https://express-on-vercel-kohl.vercel.app/api/products", {
+      const res = await fetch("https://express-on-vercel-c2s.vercel.app/api/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProduct),
@@ -57,7 +57,7 @@ export const useProductStore = create((set) => ({
   fetchProducts: async () => {
     try {
       // Llamada a la API
-      const res = await fetch("https://express-on-vercel-kohl.vercel.app/api/products");
+      const res = await fetch("https://express-on-vercel-c2s.vercel.app/api/products");
 
       // Verificación de la respuesta
       if (!res.ok) {
@@ -81,7 +81,7 @@ export const useProductStore = create((set) => ({
     }
   },
   deleteProduct: async (productId) => {
-    const res = await fetch(`https://express-on-vercel-kohl.vercel.app/api/products/${productId}`, {
+    const res = await fetch(`https://express-on-vercel-c2s.vercel.app/api/products/${productId}`, {
       method: "DELETE",
     });
     const data = await res.json();
@@ -93,7 +93,7 @@ export const useProductStore = create((set) => ({
     return {success: true, message: data.message}
   },
   updateProduct: async (productId, updatedProduct) => {
-    const res = await fetch(`https://express-on-vercel-kohl.vercel.app/api/products/${productId}`, {
+    const res = await fetch(`https://express-on-vercel-c2s.vercel.app/api/products/${productId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedProduct),
