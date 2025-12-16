@@ -22,16 +22,19 @@ const Navbar = () => {
         <Container
           maxW={"1140px"}
           px={4}
-          bgColor={useColorModeValue("gray.100", "gray.900")}
-        >
+          bgColor={useColorModeValue("gray.100", "gray.900")}>
           <Flex
             flexDir={{ base: "column", sm: "row" }}
             height={"16"}
             alignItems={"center"}
-            justifyContent={"space-between"}
-          >
+            justifyContent={"space-between"}>
             <Link to={"/"}>
-              <Box display={"flex"} flexDirection={"row"} justifyContent={"center"} spaceX={0} alignItems={"center"} >
+              <Box
+                display={"flex"}
+                flexDirection={"row"}
+                justifyContent={"center"}
+                spaceX={0}
+                alignItems={"center"}>
                 <Image src="StoreImage.png" alt="storeImage" w={150} />
               </Box>
             </Link>
@@ -44,8 +47,7 @@ const Navbar = () => {
               <Button
                 bgColor={"transparent"}
                 color={"gray.600"}
-                onClick={toggleColorMode}
-              >
+                onClick={toggleColorMode}>
                 {colorMode === "light" ? (
                   <DarkIcon fontSize={20} />
                 ) : (

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoreFrontend Documentation</title>
+    <style>
+      :root {
+        --primary-color: #ff5722; /* Orange-ish Red */
+        --secondary-color: #212121; /* Dark Gray */
+        --accent-color: #ff9800; /* Orange */
+        --text-color: #333;
+        --background-color: #f9f9f9;
+        --code-bg: #f4f4f4;
+        --section-bg: #ffffff;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        box-shadow: var(--box-shadow);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      header p {
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        background: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        z-index: 100;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--secondary-color);
+        margin: 0 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--primary-color);
+      }
+
+      section {
+        background: var(--section-bg);
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: transform 0.2s ease;
+      }
+
+      section:hover {
+        transform: translateY(-2px);
+      }
+
+      h2 {
+        color: var(--primary-color);
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+      }
+
+      h3 {
+        color: var(--secondary-color);
+        margin-top: 1.5rem;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      code {
+        background-color: var(--code-bg);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: "Courier New", Courier, monospace;
+        color: #d63384;
+        font-size: 0.9rem;
+      }
+
+      pre {
+        background-color: #2d2d2d;
+        color: #f8f8f2;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        overflow-x: auto;
+      }
+
+      pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+      }
+
+      .dir-structure {
+        font-family: "Courier New", Courier, monospace;
+        background-color: var(--code-bg);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        white-space: pre;
+        line-height: 1.4;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 0;
+        color: #777;
+        font-size: 0.9rem;
+        margin-top: 3rem;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 1.8rem;
+        }
+        .container {
+          padding: 0 0.5rem;
+        }
+        section {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>StoreFrontend</h1>
+        <p>A Modern React Application for Product Management</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#tech-stack">Tech Stack</a>
+      <a href="#installation">Installation</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#components">Components</a>
+      <a href="#state">State & API</a>
+    </nav>
+
+    <div class="container">
+      <section id="overview">
+        <h2>Project Overview</h2>
+        <p>
+          <strong>StoreFrontend</strong> is a sleek and modern web application
+          designed for managing a product inventory. Built with
+          <strong>React</strong> and powered by <strong>Vite</strong>, it offers
+          a fast and responsive user experience. The UI is crafted using
+          <strong>Chakra UI</strong>, providing a consistent and accessible
+          design system with built-in dark mode support.
+        </p>
+        <p>
+          The application allows users to view a list of products, add new
+          products, update existing ones, and delete them. It interacts with an
+          external Express.js API hosted on Vercel.
+        </p>
+      </section>
+
+      <section id="tech-stack">
+        <h2>Technology Stack</h2>
+        <ul>
+          <li><strong>Frontend Framework:</strong> React 18</li>
+          <li><strong>Build Tool:</strong> Vite</li>
+          <li><strong>UI Library:</strong> Chakra UI (v3) with Emotion</li>
+          <li><strong>State Management:</strong> Zustand</li>
+          <li><strong>Routing:</strong> React Router (v7)</li>
+          <li><strong>Icons:</strong> React Icons</li>
+          <li><strong>Animations:</strong> Framer Motion</li>
+          <li><strong>Theme:</strong> Next-themes for Dark/Light mode</li>
+        </ul>
+      </section>
+
+      <section id="installation">
+        <h2>Installation & Setup</h2>
+        <p>Follow these steps to set up the project locally:</p>
+        <ol>
+          <li>
+            <strong>Clone the repository:</strong>
+            <pre><code>git clone https://github.com/yourusername/StoreFrontend.git
+cd StoreFrontend</code></pre>
+          </li>
+          <li>
+            <strong>Install dependencies:</strong>
+            <pre><code>npm install</code></pre>
+          </li>
+          <li>
+            <strong>Run the development server:</strong>
+            <pre><code>npm run dev</code></pre>
+          </li>
+          <li>
+            Open <code>http://localhost:5173</code> (or the port shown in your
+            terminal) to view the app.
+          </li>
+        </ol>
+      </section>
+
+      <section id="architecture">
+        <h2>Project Structure</h2>
+        <ul class="file-tree">
+          <li>
+            <span class="folder">src/</span>
+            <ul>
+              <li>
+                <span class="folder">components/</span>
+                <span class="comment"># Reusable UI components</span>
+                <ul>
+                  <li>
+                    <span class="folder">ui/</span>
+                    <span class="comment"
+                      ># Chakra UI specific components (snippets)</span
+                    >
+                  </li>
+                  <li>
+                    <span class="file">Modal.jsx</span>
+                    <span class="comment"># Product update modal</span>
+                  </li>
+                  <li>
+                    <span class="file">Navbar.jsx</span>
+                    <span class="comment"># Top navigation bar</span>
+                  </li>
+                  <li>
+                    <span class="file">ProductCard.jsx</span>
+                    <span class="comment"
+                      ># Individual product display card</span
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="folder">pages/</span>
+                <span class="comment"># Route-level components</span>
+                <ul>
+                  <li>
+                    <span class="file">CreatePage.jsx</span>
+                    <span class="comment"
+                      ># Page for creating new products</span
+                    >
+                  </li>
+                  <li>
+                    <span class="file">HomePage.jsx</span>
+                    <span class="comment"
+                      ># Main landing page listing products</span
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="folder">store/</span>
+                <span class="comment"># Global state management</span>
+                <ul>
+                  <li>
+                    <span class="file">product.js</span>
+                    <span class="comment"
+                      ># Zustand store for product operations</span
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="file">App.jsx</span>
+                <span class="comment"
+                  ># Main application layout and routes</span
+                >
+              </li>
+              <li>
+                <span class="file">main.jsx</span>
+                <span class="comment"
+                  ># Entry point wrapping App with providers</span
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <style>
+          /* File Tree Styles - Injected locally for this section */
+          ul.file-tree,
+          ul.file-tree ul {
+            list-style-type: none;
+            padding-left: 20px;
+          }
+          ul.file-tree li {
+            margin: 5px 0;
+            position: relative;
+          }
+          ul.file-tree li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -15px;
+            bottom: 0;
+            width: 1px;
+            background-color: #ddd;
+          }
+          ul.file-tree li::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: -15px;
+            width: 10px;
+            height: 1px;
+            background-color: #ddd;
+          }
+          ul.file-tree li:last-child::before {
+            height: 10px;
+          }
+          .folder {
+            font-weight: bold;
+            color: #d63384; /* Matching the code snippet color */
+          }
+          .file {
+            color: #333;
+          }
+          .comment {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-left: 10px;
+          }
+        </style>
+      </section>
+
+      <section id="components">
+        <h2>Component Breakdown</h2>
+
+        <h3>Navbar (<code>src/components/Navbar.jsx</code>)</h3>
+        <p>The navigation header. It features:</p>
+        <ul>
+          <li>
+            <strong>Responsive Design:</strong> Adapts to mobile and desktop
+            screens.
+          </li>
+          <li>
+            <strong>Theme Toggle:</strong> Switches between Light and Dark mode
+            using <code>useColorMode</code>.
+          </li>
+          <li>
+            <strong>Creation Link:</strong> Quick access to the "Create Product"
+            page.
+          </li>
+        </ul>
+
+        <h3>ProductCard (<code>src/components/ProductCard.jsx</code>)</h3>
+        <p>
+          Displays individual product information including image, name, and
+          price. It includes action buttons for:
+        </p>
+        <ul>
+          <li>
+            <strong>Editing:</strong> Opens the <code>Modal</code> component.
+          </li>
+          <li>
+            <strong>Deleting:</strong> Triggers the
+            <code>deleteProduct</code> action from the store.
+          </li>
+        </ul>
+        <p>
+          <em>Design Note:</em> Uses a glassmorphism effect in the UI
+          (<code>backdropBlur</code>).
+        </p>
+        <p></p>
+
+        <h3>Modal (<code>src/components/Modal.jsx</code>)</h3>
+        <p>
+          A dialog component built with Chakra UI's Dialog primitives. It
+          handles the <strong>Update</strong> functionality. It manages its own
+          local state for the form inputs before syncing with the global store
+          upon submission.
+        </p>
+
+        <h3>CreatePage (<code>src/pages/CreatePage.jsx</code>)</h3>
+        <p>
+          A dedicated page for adding new products. It validates inputs and
+          calls the API to create a product. Success or error messages are
+          displayed using a toast notification system.
+        </p>
+      </section>
+
+      <section id="state">
+        <h2>State Management & API</h2>
+        <p>
+          The project uses <strong>Zustand</strong> for simplified global state
+          management, located in <code>src/store/product.js</code>.
+        </p>
+
+        <h3>API Endpoints</h3>
+        <p>
+          The store communicates with the backend at
+          <code>https://express-on-vercel-c2s.vercel.app/api/products</code>.
+        </p>
+
+        <h3>Store Actions</h3>
+        <ul>
+          <li>
+            <code>fetchProducts()</code>: GET request to retrieve all products.
+          </li>
+          <li>
+            <code>createProduct(newProduct)</code>: POST request. Includes
+            validation for name, price, and image URL.
+          </li>
+          <li>
+            <code>deleteProduct(pid)</code>: DELETE request to remove a product
+            by ID.
+          </li>
+          <li>
+            <code>updateProduct(pid, updatedProduct)</code>: PUT request to
+            modify product details.
+          </li>
+        </ul>
+
+        <p>
+          <strong>Error Handling:</strong> All actions return an object
+          <code>{ success: boolean, message: string }</code>
+          which is used by the UI components to display appropriate feedback
+          (Toasts) to the user.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 StoreFrontend Project. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

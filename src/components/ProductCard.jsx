@@ -16,8 +16,7 @@ const ProductCard = ({ product }) => {
 
   const handleDeleteProduct = async (productId) => {
     const { success, message } = await deleteProduct(productId);
-    console.log("Success:", success);
-    console.log("Message:", message);
+
 
     if (!success) {
       toaster.create({ description: message, type: "error" });
@@ -30,9 +29,11 @@ const ProductCard = ({ product }) => {
     <Box
       shadow={"lg"}
       rounded={"lg"}
+      backgroundColor={"rgba(255, 255, 255, 0.1)"}
+      backdropBlur={"10px"}
+      backdropOpacity={0.5}
       transition={"all 0.3s"}
-      _hover={{ transform: "translateY(-5px)", shadow: "xl" }}
-    >
+      _hover={{ transform: "translateY(-5px)", shadow: "xl" }}>
       <Image
         src={product.image}
         alt={product.name}
@@ -49,12 +50,11 @@ const ProductCard = ({ product }) => {
         </Text>
 
         <HStack spaceX={4} zIndex={0}>
-          <Modal product={product}/>
+          <Modal product={product} />
 
           <IconButton
             colorPalette={"red"}
-            onClick={() => handleDeleteProduct(product._id)}
-          >
+            onClick={() => handleDeleteProduct(product._id)}>
             <DeleteIcon />
           </IconButton>
         </HStack>

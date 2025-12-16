@@ -4,31 +4,26 @@ import { useProductStore } from "../store/product";
 import { useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 
-
 const HomePage = () => {
   const { fetchProducts, products } = useProductStore();
-
 
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
-
-  console.log("products:", products);
 
   return (
     <Box w={"full"} h={"vh"} position={"relative"}>
       <Container marginY={8}>
         <VStack spaceY={8}>
           <Text
-            fontSize={{ base: "30", sm: "4xl" }}
+            fontSize={{ base: "30", sm: "3xl" }}
             fontWeight="bold"
             textTransform={"uppercase"}
             textAlign={"center"}
             bgGradient="to-r"
             gradientFrom={"orange.500"}
             gradientTo={"red"}
-            bgClip="text"
-          >
+            bgClip="text">
             Current Products
           </Text>
 
@@ -38,20 +33,18 @@ const HomePage = () => {
             ))}
           </SimpleGrid>
 
-          {products.length === 0 && (
+          {!products && (
             <Text
               fontSize={"xl"}
               textAlign={"center"}
               fontWeight={"bold"}
-              color={"gray.500"}
-            >
+              color={"gray.500"}>
               No products found 😔
               <Link to={"/create"}>
                 <Text
                   as={"span"}
                   color={"blue.500"}
-                  _hover={{ textDecoration: "underline" }}
-                >
+                  _hover={{ textDecoration: "underline" }}>
                   Create One.
                 </Text>
               </Link>

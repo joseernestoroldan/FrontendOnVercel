@@ -51,8 +51,7 @@ const CreatePage = () => {
           gradientFrom={"orange.500"}
           gradientTo={"red"}
           bgClip="text"
-          mt={8}
-        >
+          mt={8}>
           Create New Product
         </Heading>
         <Box
@@ -61,8 +60,7 @@ const CreatePage = () => {
           px={12}
           py={12}
           shadow={"md"}
-          rounded={"lg"}
-        >
+          rounded={"lg"}>
           <VStack spaceY={4}>
             <Input
               placeholder="Product Name"
